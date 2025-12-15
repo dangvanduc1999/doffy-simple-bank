@@ -11,18 +11,20 @@ import (
 )
 
 var AccountQueries *Queries
+var dbPoolTest *pgxpool.Pool
+var dbPoolError error
 
 func TestMain(m *testing.M) {
 	appContext := utils.GetAppTestContext()
-	dbPool, err := pgxpool.New(context.Background(), appContext.MainDBConnection)
+	dbPoolTest, dbPoolError = pgxpool.New(context.Background(), appContext.MainDBConnection)
 
-	if err != nil {
-		log.Fatal("Cannot access to database", err)
+	if dbPoolError != nil {
+		log.Fatal("Cannot access to database", dbPoolError)
 		return
 	}
-	defer dbPool.Close()
+	defer dbPoolTest.Close()
 
-	AccountQueries = New(dbPool)
+	AccountQueries = New(dbPoolTest)
 
 	code := m.Run()
 	appContext.Teardown()
