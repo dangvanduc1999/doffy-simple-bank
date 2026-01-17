@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/doffy/simple-bank/internals/models"
+	"github.com/dangvanduc1999/doffy-simple-bank/internals/models"
 	"github.com/jackc/pgx/v5/pgxpool"
 )
 
