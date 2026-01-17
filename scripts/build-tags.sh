@@ -99,3 +99,8 @@ git tag "$NEW_VERSION"
 git push origin "$NEW_VERSION"
 
 echo "Successfully created and pushed tag $NEW_VERSION"
+
+# Output for GitHub Actions
+if [ -n "$GITHUB_OUTPUT" ]; then
+    echo "new_tag=$NEW_VERSION" >> "$GITHUB_OUTPUT"
+fi
