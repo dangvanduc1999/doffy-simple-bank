@@ -1,4 +1,4 @@
-module github.com/doffy/simple-bank
+module github.com/dangvanduc1999/doffy-simple-bank
 
 go 1.25.2
 

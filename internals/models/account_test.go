@@ -4,7 +4,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/doffy/simple-bank/internals/utils"
+	"github.com/dangvanduc1999/doffy-simple-bank/internals/utils"
 	"github.com/stretchr/testify/assert"
 )
 

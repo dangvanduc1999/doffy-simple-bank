@@ -6,7 +6,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/doffy/simple-bank/internals/utils"
+	"github.com/dangvanduc1999/doffy-simple-bank/internals/utils"
 	"github.com/jackc/pgx/v5/pgxpool"
 )
 
