@@ -1,7 +1,7 @@
-include .env
+-include .env
 export 
 
-test:
+print-vars:
 	@echo $(DB_URL)
 	@echo $(MIGRATIONS_DIR)
 	@echo $(DRIVER)
