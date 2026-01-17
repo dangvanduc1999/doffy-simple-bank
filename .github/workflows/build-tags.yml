@@ -18,4 +18,6 @@ jobs:
           fetch-depth: 0
 
       - name: Build Tags
-        run: make build-tags PR_TITLE="${{ github.event.pull_request.title }}"
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
+        run: make build-tags
