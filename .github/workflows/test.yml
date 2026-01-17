@@ -13,12 +13,22 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
       - name: Set up Go
         uses: actions/setup-go@v4
         with:
           go-version: "1.25.2"
 
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Test
         run: make test
+  build-tags:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build Tags
+        run: make build-tags
+

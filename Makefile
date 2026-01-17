@@ -31,4 +31,7 @@ sqlc:
 test:
 	go test -v -cover ./internals/models/
 
+build-tags:
+	./scripts/build-tags.sh "$(PR_TITLE)"
+
 .PHONY: postgres create-db drop-db goose-create-file migrate-up migrate-down sqlc test

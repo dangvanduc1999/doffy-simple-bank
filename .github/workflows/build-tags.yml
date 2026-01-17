@@ -1,0 +1,21 @@
+name: build-tags
+
+on:
+  pull_request:
+    branches: ["main"]
+    types: ["closed"]
+
+jobs:
+  build-tags:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Build Tags
+        run: make build-tags PR_TITLE="${{ github.event.pull_request.title }}"
