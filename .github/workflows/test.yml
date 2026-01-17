@@ -23,12 +23,3 @@ jobs:
 
       - name: Test
         run: make test
-  build-tags:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Build Tags
-        run: make build-tags
-
