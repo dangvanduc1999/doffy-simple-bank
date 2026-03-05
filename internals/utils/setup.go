@@ -86,7 +86,7 @@ func Setup() *AppTestContext {
 		log.Fatalf("failed to set goose dialect: %s", err)
 	}
 
-	migrationsDir, err := findMigrationsDir()
+	migrationsDir, err := FindMigrationsDir()
 	if err != nil {
 		log.Fatalf("failed to find migrations directory: %s", err)
 	}
@@ -101,7 +101,7 @@ func Setup() *AppTestContext {
 	}
 }
 
-func findMigrationsDir() (string, error) {
+func FindMigrationsDir() (string, error) {
 	path, err := os.Getwd()
 	if err != nil {
 		return "", err

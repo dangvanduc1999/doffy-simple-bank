@@ -52,7 +52,7 @@ func TestNewCoreDB(t *testing.T) {
 		Options:  "sslmode=disable",
 	}
 
-	queries, pool, err := NewCoreDB(config)
+	queries, pool, err := NewCoreDB(config, false)
 	if err != nil {
 		t.Fatalf("NewCoreDB failed: %v", err)
 	}
